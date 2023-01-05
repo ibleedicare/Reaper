@@ -1,6 +1,6 @@
 CURRENT_PROJECT = 0
 MAIN_TRACK = "Vocal Lead"
-VST_NAME = "Waves Tune Real-Time Stereo (x86) (Waves)"
+VST_NAME = "YOUR VST NAME"
 
 function get_vst_index(track, vst_name)
   return reaper.TrackFX_AddByName(track, vst_name, false, 0)
