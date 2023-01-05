@@ -1,6 +1,6 @@
 CURRENT_PROJECT = 0
 MAIN_TRACK = "Vocal Lead"
-VST_NAME = "REPLACE BY YOUR VST"
+VST_NAME = "Waves Tune Real-Time Stereo (x86) (Waves)"
 
 function get_vst_index(track, vst_name)
   return reaper.TrackFX_AddByName(track, vst_name, false, 0)
@@ -23,7 +23,8 @@ end
 
 function get_vocal_lead_from_selected_track(selected_tracks)
   for track=0,selected_tracks-1 do
-    current_name = reaper.GetTrackName(track)
+    current_track = reaper.GetSelectedTrack(0, track)
+    ret_val, current_name = reaper.GetTrackName(current_track)
     if current_name == MAIN_TRACK
     then
       return track
